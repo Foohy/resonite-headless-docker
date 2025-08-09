@@ -14,7 +14,11 @@ RUN	apt update \
 
 COPY	./scripts /scripts
 
+
 RUN	chmod +x /scripts/*
+
+RUN /scripts/build-libsdl3.sh
+
 
 RUN	mkdir /Logs \
 	&& chown -R container:container /Logs

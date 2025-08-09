@@ -6,6 +6,9 @@ find /Logs -type f -name *.log -atime +${LOG_RETENTION:-30} -delete
 
 cd /home/container/Headless/
 
+cp /usr/local/lib/libSDL3.* .
+
+
 RESONITE_ENTRYPOINT="Resonite.dll"
 
 if [ ! "${OVERRIDE_ENTRYPOINT}" = "" ]; then
